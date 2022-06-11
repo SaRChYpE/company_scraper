@@ -27,7 +27,7 @@ def get_pages():
 company = input('Podaj nazwe firmy: ')
 company = company.replace(' ','_')
 city = input("Podaj miasto: ")
-url = f'https://panoramafirm.pl/{company}/{city}/firmy,1.html'
+url = f'XXXXXX/{company}/{city}/firmy,1.html'
 page = requests.get(url)
 soup = BeautifulSoup(page.content, 'html.parser')
 fname = input('Podaj nazwe pliku: ')
@@ -35,7 +35,7 @@ f = open(fname+'.txt', 'w')
 f2 = open(fname+"_without-www.txt", 'w')
 pages = get_pages()
 for i in range(0, pages):
-    url = f'https://panoramafirm.pl/{company}/{city}/firmy,{i}.html'
+    url = f'XXXXXX/{company}/{city}/firmy,{i}.html'
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
     company_searcher('card top-link company-item py-2 container my-2', f, f2, company)
